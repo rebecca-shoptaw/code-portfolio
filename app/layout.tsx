@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Inconsolata } from "next/font/google";
 import "./(styles)/globals.css";
 import Header from "./(components)/Header";
 
-const montserrat = Montserrat({
+const inconsolata = Inconsolata({
   subsets: ["latin"],
 });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={inconsolata.className}>
         <Header />
         {children}
       </body>
