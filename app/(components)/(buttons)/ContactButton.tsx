@@ -1,17 +1,14 @@
 import utils from "@/app/(styles)/utils.module.css";
-import styles from "../Header.module.css";
+import styles from "./buttons.module.css";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 const ContactButton = () => {
   return (
     <a
-      className={[
-        utils.button,
-        utils.animateHorizontal,
-        styles.nav__button,
-      ].join(" ")}
+      className={[styles.btn_default, utils.animateHorizontal].join(" ")}
       href="mailto:rebecca@rebeccashoptaw.dev"
       target="_blank"
+      title="Contact"
     >
       CONTACT <ArrowRightIcon />
     </a>

@@ -6,11 +6,12 @@ import useScrollPosition from "../(hooks)/useScrollPosition";
 import styles from "./Header.module.css";
 
 import NavLink from "./HeaderLink";
-import HeaderIcon from "./HeaderIcon";
-import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import ResumeButton from "./(buttons)/ResumeButton";
 import ContactButton from "./(buttons)/ContactButton";
 import SiteLogo from "./(buttons)/SiteLogo";
+import IconButton from "./(buttons)/IconButton";
+
+import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 
 const Header = () => {
   const fixedNavRef = useRef() as React.MutableRefObject<HTMLDivElement>;
@@ -24,9 +25,10 @@ const Header = () => {
       <nav className={styles["nav--fixed"]} ref={fixedNavRef}>
         <ul className={styles.nav__wrapper}>
           <li>
-            <HeaderIcon
+            <IconButton
               href="https://www.linkedin.com/in/rebeccashoptaw/"
               icon={<LinkedInLogoIcon />}
+              title="LinkedIn"
             />
           </li>
           <li>

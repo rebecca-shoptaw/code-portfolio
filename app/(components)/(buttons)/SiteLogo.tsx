@@ -1,5 +1,4 @@
-import utils from "@/app/(styles)/utils.module.css";
-import styles from "../Header.module.css";
+import styles from "./buttons.module.css";
 import resetUrl from "@/app/(utils)/utils";
 
 const SiteLogo = ({
@@ -11,7 +10,7 @@ const SiteLogo = ({
 }) => {
   return (
     <a
-      className={[utils.button, styles.nav__child, styles.nav__logo].join(" ")}
+      className={styles.btn_logo}
       href="#hero"
       ref={logoRef}
       onClick={resetUrl}

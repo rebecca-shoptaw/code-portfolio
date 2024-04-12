@@ -1,0 +1,55 @@
+/* shared styles */
+
+.btn_default,
+.btn_icon {
+  color: var(--light-100);
+  border: 1px solid var(--light-100);
+  transition: border-color var(--anim-time);
+}
+
+.btn_default,
+.btn_logo {
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.btn_default svg,
+.btn_icon svg {
+  margin-bottom: -2px;
+}
+
+.btn_default:hover,
+.btn_icon:hover {
+  border-color: var(--gray-hover);
+}
+
+/* individual styles */
+
+.btn_default {
+  padding: 5px 15px;
+  border-radius: var(--mid-radius);
+}
+
+.btn_default svg {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.btn_icon {
+  width: 300px;
+  padding: 5px;
+  border-radius: var(--mid-radius);
+}
+
+.btn_logo {
+  color: var(--light-100);
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  transition: color var(--anim-time);
+}
+
+.btn_logo:hover {
+  color: var(--gray-hover);
+}
