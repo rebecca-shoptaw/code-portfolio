@@ -1,5 +1,5 @@
-import HeaderIcon from "./HeaderIcon";
-import styles from "./Header.module.css";
+import HeaderIcon from "../HeaderIcon";
+import styles from "../Header.module.css";
 import utils from "@/app/(styles)/utils.module.css";
 import { FileIcon, DownloadIcon } from "@radix-ui/react-icons";
 

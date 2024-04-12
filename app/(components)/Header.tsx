@@ -1,12 +1,16 @@
 "use client";
 import { useRef } from "react";
-import styles from "./Header.module.css";
-import utils from "../(styles)/utils.module.css";
-import NavLink from "./HeaderLink";
-import HeaderButton from "./HeaderButton";
 import useCalculatedMargins from "@/app/(hooks)/useCalculatedMargins";
 import useScrollPosition from "../(hooks)/useScrollPosition";
-import resetUrl from "../(utils)/utils";
+
+import styles from "./Header.module.css";
+
+import NavLink from "./HeaderLink";
+import HeaderIcon from "./HeaderIcon";
+import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+import ResumeButton from "./(buttons)/ResumeButton";
+import ContactButton from "./(buttons)/ContactButton";
+import SiteLogo from "./(buttons)/SiteLogo";
 
 const Header = () => {
   const fixedNavRef = useRef() as React.MutableRefObject<HTMLDivElement>;
@@ -16,23 +20,21 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <a
-        className={[utils.button, styles.nav__child, styles.nav__logo].join(
-          " "
-        )}
-        href="#hero"
-        ref={logoRef}
-        onClick={resetUrl}
-      >
-        {!pastHeader ? "Rebecca Shoptaw" : "rs"}
-      </a>
+      <SiteLogo logoRef={logoRef} switchToInitials={pastHeader} />
       <nav className={styles["nav--fixed"]} ref={fixedNavRef}>
         <ul className={styles.nav__wrapper}>
-          <HeaderButton
-            href="/Rebecca_Shoptaw_resume.pdf"
-            text={!pastHeader ? "Resume" : "📄"}
-          />
-          <HeaderButton href="#contact" text="Contact" />
+          <li>
+            <HeaderIcon
+              href="https://www.linkedin.com/in/rebeccashoptaw/"
+              icon={<LinkedInLogoIcon />}
+            />
+          </li>
+          <li>
+            <ResumeButton switchToIcon={pastHeader} />
+          </li>
+          <li>
+            <ContactButton />
+          </li>
         </ul>
       </nav>
       {margins.left && margins.right && (
@@ -44,9 +46,9 @@ const Header = () => {
           }}
         >
           <ul className={styles.nav__wrapper}>
-            <NavLink href="#about" text="About" />
-            <NavLink href="#experince" text="Experience" />
-            <NavLink href="#samples" text="Samples" />
+            <NavLink href="#about" text="ABOUT" />
+            <NavLink href="#experince" text="EXPERIENCE" />
+            <NavLink href="#samples" text="SAMPLES" />
           </ul>
         </nav>
       )}

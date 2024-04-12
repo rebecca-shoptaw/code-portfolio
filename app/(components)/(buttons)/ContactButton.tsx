@@ -1,5 +1,5 @@
 import utils from "@/app/(styles)/utils.module.css";
-import styles from "./Header.module.css";
+import styles from "../Header.module.css";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 const ContactButton = () => {
