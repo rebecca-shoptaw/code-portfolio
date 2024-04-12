@@ -1,6 +1,22 @@
 .button {
   padding: 5px 15px;
   border-radius: var(--mid-radius);
-  box-shadow: 0 18px 10px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
-    0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.animateVertical svg,
+.animateHorizontal svg,
+.animateScale svg {
+  transition: transform var(--anim-time);
+}
+
+.animateVertical:hover svg {
+  transform: translateY(10%);
+}
+
+.animateHorizontal:hover svg {
+  transform: translateX(15%);
+}
+
+.animateScale:hover svg {
+  transform: scale(1.05);
 }
