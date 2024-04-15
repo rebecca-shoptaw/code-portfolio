@@ -1,18 +1,12 @@
 import styles from "./buttons.module.css";
 import resetUrl from "@/app/(utils)/utils";
+import { SiteLogoProps } from "@/app/(types)/types";
 
-const SiteLogo = ({
-  logoRef,
-  switchToInitials,
-}: {
-  logoRef: React.MutableRefObject<HTMLAnchorElement>;
-  switchToInitials: boolean;
-}) => {
+const SiteLogo = ({ switchToInitials, extraStyles }: SiteLogoProps) => {
   return (
     <a
-      className={styles.btn_logo}
+      className={[styles.btn_logo, extraStyles].join(" ")}
       href="#hero"
-      ref={logoRef}
       onClick={resetUrl}
     >
       {!switchToInitials ? "REBECCA SHOPTAW" : "RS"}
