@@ -44,9 +44,6 @@
 
 .btn_logo {
   color: var(--light-100);
-  position: fixed;
-  top: 10px;
-  left: 20px;
   transition: color var(--anim-time);
 }
 

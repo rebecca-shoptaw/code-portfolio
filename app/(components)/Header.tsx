@@ -1,9 +1,9 @@
 "use client";
+import styles from "./Header.module.css";
+
 import { useRef } from "react";
 import useCalculatedMargins from "@/app/(hooks)/useCalculatedMargins";
 import useScrollPosition from "../(hooks)/useScrollPosition";
-
-import styles from "./Header.module.css";
 
 import NavLink from "./HeaderLink";
 import ResumeButton from "./(buttons)/ResumeButton";
@@ -14,15 +14,12 @@ import IconButton from "./(buttons)/IconButton";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 
 const Header = () => {
-  const fixedNavRef = useRef() as React.MutableRefObject<HTMLDivElement>;
-  const logoRef = useRef() as React.MutableRefObject<HTMLAnchorElement>;
-  const margins = useCalculatedMargins(logoRef, fixedNavRef);
-  const pastHeader = useScrollPosition(30);
-
   return (
     <header className={styles.header}>
-      <SiteLogo logoRef={logoRef} switchToInitials={pastHeader} />
-      <nav className={styles["nav--fixed"]} ref={fixedNavRef}>
+      <SiteLogo
+        switchToInitials={true}
+      />
+      <nav>
         <ul className={styles.nav__wrapper}>
           <li>
             <IconButton
@@ -32,28 +29,13 @@ const Header = () => {
             />
           </li>
           <li>
-            <ResumeButton switchToIcon={pastHeader} />
+            <ResumeButton switchToIcon={true} />
           </li>
           <li>
             <ContactButton />
           </li>
         </ul>
       </nav>
-      {margins.left && margins.right && (
-        <nav
-          className={styles["nav--relative"]}
-          style={{
-            marginRight: margins.right,
-            marginLeft: margins.left,
-          }}
-        >
-          <ul className={styles.nav__wrapper}>
-            <NavLink href="#about" text="ABOUT" />
-            <NavLink href="#experince" text="EXPERIENCE" />
-            <NavLink href="#samples" text="SAMPLES" />
-          </ul>
-        </nav>
-      )}
     </header>
   );
 };
